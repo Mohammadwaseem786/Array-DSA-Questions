@@ -1,0 +1,14 @@
+Question. 
+Reverse Array Of Size K Sub Groups 
+Ex-> a={2,7,6,9} k=2
+Output-> a={7,2,9,6}
+ 
+ void ReverseArrayByKGroups(int a[],int n){
+       for(int i=0;i<n;i+=k){
+         int left=i;
+    // in order to avoid if k is not multiple of n
+         int right=min(i+k-1,n-1);
+       while(left<right) 
+         swap(a[left++],a[right--]);
+    }
+ }

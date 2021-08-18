@@ -1,0 +1,23 @@
+QUESTION :  LEETCODE 977
+Ex->{-6,-3,5,9}
+OUTPUT->{9,25,36,81}
+ 
+ vector<int> SquaresOfSortedArray(vector<int> &nums){
+   int n=nums.size();
+   vector<int>ans(n);
+   int i=0,j=n-1,index=n-1;
+   while(i<=j){
+    int val1=nums[i]*nums[i];
+    int val2=nums[j]*nums[j];
+   if(val1>val2){
+     ans[index]=val1;
+     index--,i++;
+      }
+   if(val2>val1){
+     ans[index]=val2;
+     index--,j--;
+     }
+   }
+  }
+   return ans;
+ }

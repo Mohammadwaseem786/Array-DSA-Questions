@@ -1,0 +1,36 @@
+Question:
+FIND MAJORITY ELEMENT IN THE ARRAY WHICH HAS OCCURRED MORE THAN N/3 TIMES. 
+Ex->{3,3,2,2,1}
+Output->{3,2};
+ 
+ vector<int> FindMajorityElement(vector<int>&nums){
+   vector<int>ans;
+   int nums1=-1,nums2=-1;
+   int count1=0,count2=0;
+    for(int ele:nums){
+     if(ele==nums1) count1++;
+    else if(ele==nums2) count2++;
+    else if(count1==0){
+      nums1=ele;
+      count1=1;
+     }
+    else if(count2==0){
+     nums2=ele;
+     count2=1;
+     }
+    else{
+     count1--;
+     count2--;
+     }
+   }
+    count1=count2=0;
+    for(int ele:nums){
+     if(ele==nums1) count1++;
+    else if(ele==nums2) count2++;
+    }
+   if(count1>nums.size()/3) 
+     ans.push_back(nums1);
+   if(count2>nums.size()/3) 
+     ans.push_back(nums2);
+  return ans;
+ }

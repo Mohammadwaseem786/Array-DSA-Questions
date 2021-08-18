@@ -18,6 +18,8 @@ OUTPUT->{9,25,36,81}
      index--,j--;
      }
    }
-  }
    return ans;
  }
+  
+  
+ 

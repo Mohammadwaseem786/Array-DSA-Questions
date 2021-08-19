@@ -1,0 +1,30 @@
+QUESTION:
+FIND THE NEXT GREATER ELEMENT THAT CAN BE FORMED THE ANSWER SHOULD BE LESS THAN 32 BIT INTEGER. 
+EX-12
+OUTPUT-21
+EX-113
+OUTPUT-131
+EX-21
+OUTPUT:-1
+
+ int FindMaxNumber(Int n){
+  string s=to_string(n);
+  int i=s.size()-2;
+  while(i>=0 && s[i]>=s[i+1]) 
+     i--;
+  if(i==-1) return -1;
+  int j=s.size()-1;
+  while(j>i && s[k]<=s[i]) 
+     k--;
+  swap(s[i],s[k]);
+  reverse(s.begin()+i+1,s.end());
+  long ans=stol(s);
+  return ans>INT_MAX?-1:ans;
+  }
+
+ NOTE:TO CHECK WHTHER THE NUMBER LIES IN RANGE OF 32 BIT INTEGER
+  WE COMPARE WITH THAT INT_MAX 
+  if(number>INT_MAX) 
+   return -1; // number has crossed the 32 bit integer. 
+  else  number is valid. 
+  

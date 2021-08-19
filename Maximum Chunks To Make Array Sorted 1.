@@ -1,0 +1,20 @@
+QUESTION:
+MAXIMUM CHUNKS NEEDED TO SORT ARRAY 
+LEETCODE. 
+Ex-{1,2,0}
+Output:3
+Ex-{2,1,0}
+Output:1
+Ex-{0,3,2,1,4}
+Output-3
+
+ int FindChunksNumber(vector<int>&nums){
+  int count=0;
+  int Maxi=INT_MIN;
+  for(int i=0;i<nums.size();i++){
+   Maxi=max(Maxi,nums[i]);
+   if(i==Maxi) 
+   count++;
+   }
+  return count;
+}

@@ -1,0 +1,24 @@
+QUESTION:
+MAXIMUM CHUNKS TO MAKE ARRAY SORTED 2 
+LEETCODE 768 
+EX-{2,3,4}
+OUTPUT- 1
+Ex-{0,2,1,3,4}
+OUTPUT-4
+NOTE: DUPLICATE NUMBERS ARE ALLOWED. 
+
+int FindNoOfChunks(vector<int> &nums){
+ int n=nums.size();
+ vector<int>right(n+1);
+ right[n]=INT_MAX;
+ for(int i=n-1;i>=0;i--)
+ right[i]=min(right[i+1],nums[i]);
+ int count=0;
+ int lemax=INT_MIN;
+ for(int i=0;i<n;i++){
+ lemax=max(lemax,nums[i]);
+ if(lemax<=right[i+1]) 
+ count++;
+ }
+ return count;
+}

@@ -1,0 +1,18 @@
+Question:
+Find 3 elements In Array Which Sum Is Closest To Target. 
+ 
+ int threesumcloset(vector<int>&nums,int target){
+   int n=nums.size();
+   if(n<3) return 0;
+   sort(nums.begin(),nums.end());
+   int closesum=nums[0]+nums[1]+nums[2];
+ for(int i=0;i<nums.size()-2;i++){
+   int j=i+1,k=nums.size()-1;
+  while(j<k){
+   int cursum=nums[i]+nums[j]+nums[k];
+   if(abs(cursum-target)<abs(closesum-target))
+   closesum=cursum;
+    }
+   }
+  return closesum;
+ }
